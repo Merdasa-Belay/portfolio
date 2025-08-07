@@ -17,10 +17,10 @@ const Hero = () => {
               Hi, I'm <span className="text-blue-600">Merdasa Belay</span>
             </h1>
             <h2 className="text-2xl md:text-3xl text-gray-600 mb-6">
-              Frontend Developer & UI Designer
+              Frontend Developer
             </h2>
             <p className="text-lg text-gray-700 mb-8 max-w-lg">
-              I create beautiful, responsive websites with modern technologies and user-focused design principles.
+            I build fast, responsive, and modern websites using React, Next.js, and Tailwind CSS — with a strong focus on clean code and great user experience.
             </p>
             <div className="flex space-x-4">
               <a
