@@ -1,6 +1,7 @@
 // src/components/Skills.jsx
 import React, { useEffect } from 'react';
 import '../index.css';
+import { SiNextdotjs } from 'react-icons/si';
 
 const technicalSkills = [
   { name: 'HTML/CSS', level: 95 },
@@ -16,6 +17,7 @@ const professionalSkills = [
   { name: 'Creativity', level: 95 },
 ];
 
+// Updated: tools now support both Font Awesome (string) and React components
 const tools = [
   { icon: 'fab fa-html5', name: 'HTML5', color: 'text-orange-500' },
   { icon: 'fab fa-css3-alt', name: 'CSS3', color: 'text-blue-500' },
@@ -23,12 +25,13 @@ const tools = [
   { icon: 'fab fa-react', name: 'React', color: 'text-blue-400' },
   { icon: 'fab fa-node-js', name: 'Node.js', color: 'text-green-500' },
   { icon: 'fab fa-git-alt', name: 'Git', color: 'text-orange-600' },
-  { icon: 'fab fa-figma', name: 'Figma', color: 'text-purple-500' },
   { icon: 'fas fa-database', name: 'MongoDB', color: 'text-blue-600' },
+
+  // ✅ Added Next.js icon using react-icons
+  { icon: <SiNextdotjs />, name: 'Next.js', color: 'text-black' },
 ];
 
 const Skills = () => {
-  // Optional: Animate skill bars when in view
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
@@ -115,8 +118,12 @@ const Skills = () => {
                 key={tool.name}
                 className="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 w-24"
               >
-                <i className={`${tool.icon} text-4xl ${tool.color} mb-2`}></i>
-                <span className="text-sm">{tool.name}</span>
+                {typeof tool.icon === 'string' ? (
+                  <i className={`${tool.icon} text-4xl ${tool.color} mb-2`}></i>
+                ) : (
+                  <div className={`text-4xl ${tool.color} mb-2`}>{tool.icon}</div>
+                )}
+                <span className="text-sm text-center">{tool.name}</span>
               </div>
             ))}
           </div>
