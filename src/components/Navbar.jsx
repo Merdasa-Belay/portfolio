@@ -41,7 +41,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed w-full bg-white shadow-md z-50">
+    <nav role="navigation" aria-label="Main Navigation" className="fixed w-full bg-white shadow-md z-50">
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
